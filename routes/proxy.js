@@ -22,6 +22,12 @@ module.exports.register = (server, options, next) => {
     // SubScene
     proxy('subscene', 'https://subscene.com')
 
+    // IMDBSG
+    proxy('imdbsg', 'http://sg.media-imdb.com')
+
+    // IMDB
+    proxy('imdb', 'http://www.imdb.com')
+
     next()
 }
 

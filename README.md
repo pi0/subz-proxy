@@ -23,11 +23,19 @@ fps:          | `23.96`,           | Number of frames per sec in the video.
 query         | `Charlie Chaplin`  | Text-based query
 gzip          | `true`             | returns url to gzipped subtitles, defaults to false
 
+## IMDB
+
+### Search
+
+- https://subz.now.sh/imdb/search?query=Inception
+
 ## API Proxy
 
-- https://subz.now.sh/p/opensubtitles
-- https://subz.now.sh/p/subdb
-- https://subz.now.sh/p/subscene
+- https://subz.now.sh/p/opensubtitles ~> http://api.opensubtitles.org:80
+- https://subz.now.sh/p/subdb ~> http://api.thesubdb.com
+- https://subz.now.sh/p/subscene ~> https://subscene.com
+- https://subz.now.sh/p/imdb ~> http://www.imdb.com
+- https://subz.now.sh/p/imdbsg ~> http://sg.media-imdb.com
 
 # License 
 

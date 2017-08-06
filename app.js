@@ -14,6 +14,9 @@ server.register([
     // OpenSubtitles Provider /opensubtitles/*
     { register: require('./routes/opensubtitles') },
 
+    // IMDB Provider /imdb/*
+    { register: require('./routes/imdb') },
+
 ], err => {
     if (err) return console.error(err);
     server.start((err) => {
