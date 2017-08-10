@@ -31,7 +31,7 @@ const SearchRoute2 = {
     method: 'GET',
     path: `/imdb/search2`,
     async handler(request, reply) {
-        let query = request.query.query || ''
+        let query = (request.query.query || '').toLowerCase()
 
         let results
         try {
