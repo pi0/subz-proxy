@@ -28,6 +28,7 @@ gzip          | `true`             | returns url to gzipped subtitles, defaults 
 ### Search
 
 - https://subz.now.sh/imdb/search?query=Inception
+- https://subz.now.sh/imdb/search2?query=Inception
 
 ## API Proxy
 
