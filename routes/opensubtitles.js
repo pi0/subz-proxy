@@ -33,7 +33,7 @@ const SearchRoute = {
             let resultsC = await os.search(opts) || {}
             results = Object.values(resultsC).map(r => Object.assign(r, {
                 // Rewrite Download URL
-                url: `http://${request.headers.host}/${r.url.replace(OS_DL_BASE, '/opensubtitles/download/').replace(/\/\//g,'/')}`,
+                url: `http://${request.headers.host}${r.url.replace(OS_DL_BASE, '/opensubtitles/download/').replace(/\/\//g,'/')}`,
                 url2: r.url.replace(OS_DL_BASE, DL_PROXY_URL),
                 url3: r.url
             }))
