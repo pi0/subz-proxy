@@ -16,6 +16,9 @@ module.exports.register = (server, options, next) => {
     // OpenSubtitles
     proxy('opensubtitles', 'http://api.opensubtitles.org:80')
 
+    // OpenSubtitles download
+    proxy('opensubtitles', 'http://dl.opensubtitles.org:80')
+
     // SubDB
     proxy('subdb', 'http://api.thesubdb.com')
 
