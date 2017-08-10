@@ -32,6 +32,7 @@ gzip          | `true`             | returns url to gzipped subtitles, defaults 
 ## API Proxy
 
 - https://subz.now.sh/p/opensubtitles ~> http://api.opensubtitles.org:80
+- https://subz.now.sh/p/dlopensubtitles ~> http://dl.opensubtitles.org
 - https://subz.now.sh/p/subdb ~> http://api.thesubdb.com
 - https://subz.now.sh/p/subscene ~> https://subscene.com
 - https://subz.now.sh/p/imdb ~> http://www.imdb.com
