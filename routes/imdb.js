@@ -7,30 +7,6 @@ const SearchRoute = {
     method: 'GET',
     path: `/imdb/search`,
     async handler(request, reply) {
-        let query = request.query.query
-
-        let results = []
-        try {
-            let cResults = (await axios.get(`${IMDB_URL}/xml/find?json=1&nr=1&tt=on&q=${query}`)).data || {}
-            // Flatten results
-            Object.keys(cResults).forEach(type => {
-                cResults[type].forEach(r => {
-                    results.push(Object.assign(r, { type }))
-                })
-            })
-        } catch (e) {
-            console.error(e)
-            return reply({ error: e.toString() })
-        }
-
-        reply({ results })
-    }
-}
-
-const SearchRoute2 = {
-    method: 'GET',
-    path: `/imdb/search2`,
-    async handler(request, reply) {
         let query = (request.query.query || '').toLowerCase()
 
         let results
@@ -55,6 +31,31 @@ const SearchRoute2 = {
                 type: r.q,
                 cover: cover(r)
             }))
+        } catch (e) {
+            console.error(e)
+            return reply({ error: e.toString() })
+        }
+
+        reply({ results })
+    }
+}
+
+
+const SearchRout2 = {
+    method: 'GET',
+    path: `/imdb/search2`,
+    async handler(request, reply) {
+        let query = request.query.query
+
+        let results = []
+        try {
+            let cResults = (await axios.get(`${IMDB_URL}/xml/find?json=1&nr=1&tt=on&q=${query}`)).data || {}
+            // Flatten results
+            Object.keys(cResults).forEach(type => {
+                cResults[type].forEach(r => {
+                    results.push(Object.assign(r, { type }))
+                })
+            })
         } catch (e) {
             console.error(e)
             return reply({ error: e.toString() })
