@@ -41,7 +41,7 @@ const SearchRoute = {
 }
 
 
-const SearchRout2 = {
+const SearchRoute2 = {
     method: 'GET',
     path: `/imdb/search2`,
     async handler(request, reply) {
