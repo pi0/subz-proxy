@@ -10,7 +10,7 @@ const os = new OS({
 
 const OS_DL_BASE = 'http://dl.opensubtitles.org'
 const DL_PROXY_URL = 'https://subz.now.sh/p/opensubtitles'
-const INTERNAL_DL_URL = DL_PROXY_URL
+const INTERNAL_DL_URL = OS_DL_BASE // DL_PROXY_URL
 
 searchCache = LRU()
 const dlCache = LRU()
@@ -33,7 +33,7 @@ const SearchRoute = {
             let resultsC = await os.search(opts) || {}
             results = Object.values(resultsC).map(r => Object.assign(r, {
                 // Rewrite Download URL
-                url: `http://${request.headers.host}/${r.url.replace(OS_DL_BASE, '/opensubtitles/download/')}`.replace(/\/\//g,'/'),
+                url: `http://${request.headers.host}/${r.url.replace(OS_DL_BASE, '/opensubtitles/download/').replace(/\/\//g,'/')}`,
                 url2: r.url.replace(OS_DL_BASE, DL_PROXY_URL),
                 url3: r.url
             }))
